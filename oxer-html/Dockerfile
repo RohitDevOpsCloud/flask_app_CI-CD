@@ -4,10 +4,7 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
-RUN apt-get update && apt-get install -y sudo
-RUN useradd -m jenkins && echo "myuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-USER jenkins
 COPY . .
 
 # Expose port 5000
